@@ -8,7 +8,13 @@ const errorMiddleware = require("./middleware/errorMiddleware");
 const path = require("path");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        /\.vercel\.app$/  // allows all vercel.app domains
+    ],
+    credentials: true
+}));
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" }, }));
 app.use(morgan("dev"));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
