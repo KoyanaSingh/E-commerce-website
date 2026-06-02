@@ -1,0 +1,66 @@
+.hero {
+  min-height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  background-image: url("/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  color: white;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 25px;
+}
+
+.content h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+.actions button {
+  padding: 16px 34px;
+  border-radius: 8px;
+  border: none;
+  background: #07a6ef;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.secondary {
+  background: transparent !important;
+  border: 1px solid white !important;
+}
