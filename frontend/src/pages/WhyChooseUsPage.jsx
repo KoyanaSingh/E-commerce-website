@@ -3,11 +3,11 @@ import Footer from "../components/Footer";
 
 export default function WhyUsPage() {
   return (
-    <>
+    <div className="why-us-page">
       <Navbar />
 
       {/* Hero */}
-      <section className="hero">
+      <section className="hero hero1">
         <div className="shell" style={{ textAlign: "center" }}>
           <span className="badge" style={{ marginTop: 60 }}>
             WHY CHOOSE US
@@ -33,13 +33,7 @@ export default function WhyUsPage() {
           paddingRight: "40px",
         }}
       >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 20,
-          }}
-        >
+        <div className="shell2">
           {[
             {
               title: "Manufacturing Strength",
@@ -100,7 +94,9 @@ export default function WhyUsPage() {
             border: "1px solid #0f8a78",
           }}
         >
-          <h2 style={{ marginBottom: 10, fontSize: "25px" }}>Need Custom Packaging?</h2>
+          <h2 style={{ marginBottom: 10, fontSize: "25px" }}>
+            Need Custom Packaging?
+          </h2>
           <p style={{ opacity: 0.7, marginBottom: 20 }}>
             Get a quote tailored to your requirements.
           </p>
@@ -122,6 +118,6 @@ export default function WhyUsPage() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -41,7 +41,7 @@ export default function () {
       <Navbar />
       <section className="hero">
         <div className="shell hero-grid">
-          <div>
+          <div style={{ zIndex: 20 }}>
             <div className="badge">PREMIUM PACKAGING SOLUTIONS</div>
             <h1>
               Packaging That Protects.

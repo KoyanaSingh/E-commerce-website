@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../utils/api";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const links = [
@@ -13,6 +14,7 @@ export default function Navbar() {
   ];
 
   const [categories, setCategories] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     api
@@ -39,6 +41,7 @@ export default function Navbar() {
           </div>
         </Link>
 
+        {/* Desktop */}
         <div className="links">
           {links.map((item) => (
             <NavLink
@@ -56,7 +59,26 @@ export default function Navbar() {
             Get a Quote
           </Link>
         </div>
+
+        {/* Mobile Hamburger */}
+        <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {menuOpen && (
+        <div className="mobile-menu">
+          {links.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
